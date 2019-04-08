@@ -1,0 +1,10 @@
+<div *ngIf="data" class="card w-100" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{data.title}}</h5>
+    <p class="card-text">{{data.description}}</p>
+  </div>
+  <div class="card-footer">
+    <a href="#" (click)="change(data)" class="card-link">Editar</a>
+    <a href="#" (click)="remove(data.id)"  class="card-link">Eliminar</a>
+  </div>
+</div>

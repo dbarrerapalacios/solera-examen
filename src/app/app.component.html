@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Servicios</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-nav [data]="categories" (active)="filter($event)"></app-nav>
+    </div>
+  </div>
+  <div class="row pt-4">
+    <div class="col-md-8 col-sm-6 col">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 col pb-2" *ngFor="let item of services">
+          <app-card [data]="item" (delete)="remove($event)" (edit)="change($event)"></app-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col">
+      <app-form  [categories]="categories" [service]="editServices" (submit)="create($event)"></app-form>
+    </div>
+  </div>
+</div>
